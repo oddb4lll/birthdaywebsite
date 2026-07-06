@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@400&display=swap" rel="stylesheet">
+    <title>I</title>
+    <style>
+        .whole {
+            position: relative;
+            width: 400px;
+            height: 500px;
+
+            margin: 100px auto;
+            width: min(400px, 90vw);
+
+        }
+
+        .cat1 {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            left: 20%;
+            top: 85%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+            height: 100vh;
+        }
+
+        .keypad button {
+            position: relative;
+            width: 75px;
+            height: 68px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #72243E;
+            cursor: pointer;
+            padding-bottom: 20px;
+        }
+
+        .keypad button::before,
+        .keypad button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 38px;
+            height: 60px;
+            background-color: #F8B4C4;
+            border-radius: 38px 38px 0 0;
+            z-index: -1;
+        }
+
+        .keypad button::before {
+            left: 38px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .keypad button::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        .keypad button:active::before,
+        .keypad button:active::after {
+            background-color: #E89AAF;
+        }
+
+        .topbut {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            height: 60px;
+            column-gap: 40px;
+            position: absolute;
+            top: 38%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .mid1but {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            height: 60px;
+            column-gap: 40px;
+            position: absolute;
+            top: 54%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .mid2but {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            height: 60px;
+            column-gap: 40px;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .lastbut {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            height: 60px;
+            column-gap: 40px;
+            position: absolute;
+            top: 86%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .text {
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            font-weight: bold;
+            font-size: large;
+            white-space: nowrap;
+            color: black;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .box {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: #FFFBF2;
+            border-radius: 60px;
+            z-index: 1;
+        }
+
+        .inputSpace {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            column-gap: 10px;
+            position: absolute;
+            top: 15%;
+            left: 51.3%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            font-size: 70px;
+            margin: 0;
+        }
+
+        .slash {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transform: translateY(-5px);
+        }
+
+        .cat2 {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 10%;
+            left: 22%;
+        }
+
+        .digit {
+            width: 60px;
+            height: 70px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: white;
+            border-radius: 15px;
+
+            font-size: 40px;
+            font-weight: bold;
+
+            margin: 0;
+        }
+
+        .overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0.5;
+        }
+
+        .overlay2 {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0.5;
+        }
+
+        .popup-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 300px;
+            width: 300px;
+            transform: translate(-50%, -50%);
+            background-color: #FFF5F7;
+            padding: 30px;
+            border-radius: 40px;
+            border: solid #F8B4C4;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: large;
+            font-weight: bold;
+            min-width: 300px;
+            z-index: 3;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .next-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 300px;
+            width: 300px;
+            transform: translate(-50%, -50%);
+            background-color: #FFF5F7;
+            padding: 30px;
+            border-radius: 40px;
+            border: solid #F8B4C4;
+            font-size: large;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            min-width: 300px;
+            z-index: 3;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .clsbtn {
+            position: absolute;
+            top: 85%;
+            left: 36%;
+            background-color: #F8B4C4;
+            border: 3px solid #FFF8E7;
+            height: 40px;
+            width: 100px;
+            border-radius: 20px;
+            transition: background-color 10ms;
+            color: #72243E;
+            font-size: 15px;
+            font-weight: bold;
+
+        }
+
+        .nxtbtn {
+            position: absolute;
+            top: 85%;
+            left: 36%;
+            background-color: #F8B4C4;
+            border: 3px solid #FFF8E7;
+            height: 40px;
+            width: 100px;
+            border-radius: 20px;
+            transition: background-color 10ms;
+            color: #72243E;
+            font-size: 15px;
+            font-weight: bold;
+
+        }
+
+        .cat3 {
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: -30%;
+            left: -23%;
+            z-index: 0;
+        }
+
+        .cat4 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50%;
+            left: -60%;
+            z-index: 0;
+        }
+
+        .cat5 {
+            width: 200px;
+            height: 200px;
+        }
+
+        .cat6 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 110%;
+            top: 30%;
+        }
+
+        .nxtbtn:active {
+            background-color: #E89AAF;
+            transition: background-color 10ms;
+        }
+
+        .clsbtn:active {
+            background-color: #E89AAF;
+            transition: background-color 10ms;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="whole">
+        <img class="cat3" src="transimg/cat_transparent_5.png">
+        <div class="box">
+            <p class="text">Ajker date ta ki jeno 🤔</p>
+            <div id="popupOverlay" class="overlay">
+                <div class="popup-box">
+                    <p>Dont lie to me.</p>
+                    <img class="cat2" src="transimg/cat_transparent_2.png">
+                    <button class="clsbtn" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+            <img class="cat6"
+                src="transimg/Screenshot_2026-06-21-12-39-32-93_1c337646f29875672b5a61192b9010f9-removebg-preview.png">
+            <div id="nextOverlay" class="overlay2">
+                <div class="next-box">
+                    <p>OMG it's your birthday :3</p>
+                    <img class="cat5" src="transimg/image_656388e7-removebg-preview.png">
+                    <button class="nxtbtn">Next</button>
+                </div>
+            </div>
+            <img class="cat4" src="transimg/cat_transparent_4.png">
+            <div class="inputSpace">
+                <div class="digit" id="one">_</div>
+                <div class="digit" id="two">_</div>
+                <div class="slash">/</div>
+                <div class="digit" id="three">_</div>
+                <div class="digit" id="four">_</div>
+            </div>
+            <img class="cat1" src="transimg/cat_transparent_1.png">
+            <div class="keypad">
+                <div class="topbut">
+                    <button onclick="addnum('1')">1</button>
+                    <button onclick="addnum('2')">2</button>
+                    <button onclick="addnum('3')">3</button>
+                </div>
+                <div class="mid1but">
+                    <button onclick="addnum('4')">4</button>
+                    <button onclick="addnum('5')">5</button>
+                    <button onclick="addnum('6')">6</button>
+                </div>
+                <div class="mid2but">
+                    <button onclick="addnum('7')">7</button>
+                    <button onclick="addnum('8')">8</button>
+                    <button onclick="addnum('9')">9</button>
+                </div>
+                <div class="lastbut">
+                    <button onclick="resetnum()">C</button>
+                    <button onclick="addnum('0')">0</button>
+                    <button onclick="checkInput()">Enter</button>
+                </div>
+            </div>
+        </div>
+</body>
+<script>
+    let currin = "";
+    function addnum(num) {
+        if (currin.length >= 4) return;
+        currin = currin + num;
+        updateDisplay();
+    }
+    function closePopup() {
+        document.getElementById("popupOverlay").style.display = "none";
+    }
+    function resetnum() {
+        currin = "";
+        document.getElementById("one").innerText = "_";
+        document.getElementById("two").innerText = "_";
+        document.getElementById("three").innerText = "_";
+        document.getElementById("four").innerText = "_";
+    }
+    function checkInput() {
+        if (currin === "2410") {
+            document.getElementById("nextOverlay").style.display = "flex";
+        }
+        else {
+            document.getElementById("popupOverlay").style.display = "flex";
+            resetnum();
+        }
+    }
+    function updateDisplay() {
+        if (currin.length === 1) {
+            document.getElementById("one").innerText = currin;
+        }
+        else if (currin.length === 2) {
+            const num = currin.at(-1)
+            document.getElementById("two").innerText = num;
+        }
+        else if (currin.length === 3) {
+            const num = currin.at(-1)
+            document.getElementById("three").innerText = num;
+        }
+        else if (currin.length === 4) {
+            const num = currin.at(-1)
+            document.getElementById("four").innerText = num;
+        }
+    }
+</script>
+
+</html>

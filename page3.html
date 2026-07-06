@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@400&display=swap"
+        rel="stylesheet">
+    <title>love u</title>
+    <style>
+        body {
+            height: 170vh;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .flower {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            transform: translate(-50%, -50%);
+        }
+
+        .petal {
+            position: absolute;
+            width: 10px;
+            height: 40px;
+            background-color: #FFD93D;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .bouquet {
+            display: block;
+            font-family: 'Libre Baskerville', serif;
+            margin: 0;
+        }
+
+        .wishes {
+            font-family: 'Libre Baskerville', serif;
+            display: block;
+            margin: 4px 0 0 0;
+        }
+
+        .petal1 {
+            transform: translate(-50%, -50%) rotate(0deg) translateY(-22px);
+        }
+
+        .petal2 {
+            transform: translate(-50%, -50%) rotate(30deg) translateY(-22px);
+        }
+
+        .petal3 {
+            transform: translate(-50%, -50%) rotate(60deg) translateY(-22px);
+        }
+
+        .petal4 {
+            transform: translate(-50%, -50%) rotate(90deg) translateY(-22px);
+        }
+
+        .petal5 {
+            transform: translate(-50%, -50%) rotate(120deg) translateY(-22px);
+        }
+
+        .petal6 {
+            transform: translate(-50%, -50%) rotate(150deg) translateY(-22px);
+        }
+
+        .petal7 {
+            transform: translate(-50%, -50%) rotate(180deg) translateY(-22px);
+        }
+
+        .petal8 {
+            transform: translate(-50%, -50%) rotate(210deg) translateY(-22px);
+        }
+
+        .petal9 {
+            transform: translate(-50%, -50%) rotate(240deg) translateY(-22px);
+        }
+
+        .petal10 {
+            transform: translate(-50%, -50%) rotate(270deg) translateY(-22px);
+        }
+
+        .petal11 {
+            transform: translate(-50%, -50%) rotate(300deg) translateY(-22px);
+        }
+
+        .petal12 {
+            transform: translate(-50%, -50%) rotate(330deg) translateY(-22px);
+        }
+
+        .center {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: #8B5A2B;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .card {
+            top: 225px;
+            height: 250px;
+            width: 200px;
+            position: relative;
+            transition: transform 1500ms;
+            transform-style: preserve-3d;
+            flex-shrink: 0;
+        }
+
+        .front,
+        .back {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+
+        }
+
+        .mandala-flower {
+            display: block;
+            margin: 0 auto -10px auto;
+        }
+
+        .back {
+            padding: 20px;
+            transform: rotateY(180deg);
+            border-radius: 2rem;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            font-family: 'caveat', cursive;
+            font-size: 20px;
+        }
+
+        .back1 {
+            background: linear-gradient(160deg, #FFFFFF 0%, #FAE0E7 100%);
+        }
+
+        .back2 {
+            background: linear-gradient(160deg, #FDF6F0 0%, #F3E8FA 100%);
+        }
+
+        .back3 {
+            background: linear-gradient(160deg, #FFFBF7 0%, #FCEAEF 100%);
+        }
+
+        .nxtbtn {
+            position: relative;
+            top: 240px;
+            display: flex;
+            justify-content: center;
+            background-color: #F8B4C4;
+            border: 2px solid #FFF8E7;
+            height: 200px;
+            width: 120px;
+            border-radius: 40px;
+            transition: background-color 10ms;
+            color: #72243E;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nxtbtn:active {
+            background-color: #E89AAF;
+            transition: background-color 10ms;
+        }
+    </style>
+    <script>
+        function sup(card) {
+            card.style.transform = "rotateY(180deg)";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="bouquet">a tiny bouquet of birthday wishes</h1>
+        <p class="wishes">pick each flower :3</p>
+    </div>
+    <div class="container">
+        <div class="card" onclick="sup(this)">
+            <div class="front">
+                <div class="flower">
+                    <div class="petal petal1"></div>
+                    <div class="petal petal2"></div>
+                    <div class="petal petal3"></div>
+                    <div class="petal petal4"></div>
+                    <div class="petal petal5"></div>
+                    <div class="petal petal6"></div>
+                    <div class="petal petal7"></div>
+                    <div class="petal petal8"></div>
+                    <div class="petal petal9"></div>
+                    <div class="petal petal10"></div>
+                    <div class="petal petal11"></div>
+                    <div class="petal petal12"></div>
+                    <div class="center"></div>
+                </div>
+
+            </div>
+            <div class="back back1">
+                <svg class="mandala-flower" viewBox="0 0 40 40" width="36" height="36">
+                    <g stroke="#C98A9E" fill="none" stroke-width="1">
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(0 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(45 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(90 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(135 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(180 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(225 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(270 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(315 20 20)" />
+                    </g>
+                    <circle cx="20" cy="20" r="2" fill="#C98A9E" />
+                </svg>
+                <p>I hope ei agami bochor tomar etto etto bhalo katuk ki tumi tomar shob dukkho koshto bhule jao. Jibone
+                    stress thakleo I hope you find little moments of joy every single day. And I love you :3 </p>
+            </div>
+        </div>
+        <div class="card" onclick="sup(this)">
+            <div class="front">
+                <div class="flower">
+                    <div class="petal petal1"></div>
+                    <div class="petal petal2"></div>
+                    <div class="petal petal3"></div>
+                    <div class="petal petal4"></div>
+                    <div class="petal petal5"></div>
+                    <div class="petal petal6"></div>
+                    <div class="petal petal7"></div>
+                    <div class="petal petal8"></div>
+                    <div class="petal petal9"></div>
+                    <div class="petal petal10"></div>
+                    <div class="petal petal11"></div>
+                    <div class="petal petal12"></div>
+                    <div class="center"></div>
+                </div>
+
+            </div>
+            <div class="back back2">
+                <svg class="mandala-flower" viewBox="0 0 40 40" width="36" height="36">
+                    <g stroke="#C98A9E" fill="none" stroke-width="1">
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(0 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(45 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(90 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(135 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(180 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(225 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(270 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(315 20 20)" />
+                    </g>
+                    <circle cx="20" cy="20" r="2" fill="#C98A9E" />
+                </svg>
+                <p>I hope youre surrounded by good people and i hope you meet genuine people who see how wonderful you
+                    are. And maybe you will even meet the love of your life this year(ami hi sheta). And i love u :3</p>
+            </div>
+        </div>
+        <div class="card" onclick="sup(this)">
+            <div class="front">
+                <div class="flower">
+                    <div class="petal petal1"></div>
+                    <div class="petal petal2"></div>
+                    <div class="petal petal3"></div>
+                    <div class="petal petal4"></div>
+                    <div class="petal petal5"></div>
+                    <div class="petal petal6"></div>
+                    <div class="petal petal7"></div>
+                    <div class="petal petal8"></div>
+                    <div class="petal petal9"></div>
+                    <div class="petal petal10"></div>
+                    <div class="petal petal11"></div>
+                    <div class="petal petal12"></div>
+                    <div class="center"></div>
+                </div>
+
+            </div>
+            <div class="back back3">
+                <svg class="mandala-flower" viewBox="0 0 40 40" width="36" height="36">
+                    <g stroke="#C98A9E" fill="none" stroke-width="1">
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(0 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(45 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(90 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(135 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(180 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(225 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(270 20 20)" />
+                        <path d="M20,20 C22,12 18,12 20,4 C22,12 26,16 20,20" transform="rotate(315 20 20)" />
+                    </g>
+                    <circle cx="20" cy="20" r="2" fill="#C98A9E" />
+                </svg>
+                <p>I hope you excel in your academics even more than you already all your hardwork pay off. And I knoww
+                    youll be an amazing doctor, tomar mukh dekhei manush thik hoye jabe. And i love u :3</p>
+            </div>
+        </div>
+        <button class="nxtbtn">Next</button>
+    </div>
+</body>
+
+</html>

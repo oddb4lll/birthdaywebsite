@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@400&display=swap"
+        rel="stylesheet">
+    <title>Document Title</title>
+    <style>
+        body {
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+        }
+
+        .things {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 25px;
+        }
+
+        .container {
+            height: 100px;
+            width: 350px;
+            border-radius: 30px;
+            background-color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+            padding: 15px;
+        }
+
+        .box {
+            font-family: 'Courier New', Courier, monospace;
+            color: #333;
+            word-break: break-word;
+            white-space: pre-wrap;
+            width: 100%;
+        }
+
+        .randbtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+            background-color: #F8B4C4;
+            border: 2px solid #FFF8E7;
+            height: 60px;
+            width: 150px;
+            border-radius: 30px;
+            transition: background-color 10ms;
+            color: #72243E;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .randbtn:active {
+            background-color: #E89AAF;
+            transition: background-color 10ms;
+        }
+
+        .nxtbtn {
+
+            background-color: #F8B4C4;
+            border: 2px solid #FFF8E7;
+            height: 60px;
+            width: 120px;
+            border-radius: 40px;
+            transition: background-color 10ms;
+            color: #72243E;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .nxtbtn:active {
+            background-color: #E89AAF;
+            transition: background-color 10ms;
+        }
+    </style>
+    <script>
+        let typingInterval = null;
+        function reasons() {
+            let text = "";
+            var rand = Math.random();
+            if (rand >= 0 && rand < 0.02) {
+                text = "Dont need a reason. tumi emni hi onek likeable :3";
+            }
+            else if (rand >= 0.02 && rand < 0.04) {
+                text = "Youre a really good listener. I can tell you everything";
+            }
+            else if (rand >= 0.04 && rand < 0.06) {
+                text = "Your smile can make me behosh";
+            }
+            else if (rand >= 0.06 && rand < 0.08) {
+                text = "YOU LIKE ARPIT BALA THONGS";
+            }
+            else if (rand >= 0.08 && rand < 0.1) {
+                text = "You are kind and empathetic. Maybe a bit too empathetic sometimes";
+            }
+            else if (rand >= 0.1 && rand < 0.12) {
+                text = "I love your khi khi kore laugh";
+            }
+            else if (rand >= 0.12 && rand < 0.14) {
+                text = "You somehow make the weirdest stuff funny";
+            }
+            else if (rand >= 0.14 && rand < 0.16) {
+                text = "Your voice and singing voice notes are my favourite concert";
+            }
+            else if (rand >= 0.16 && rand < 0.18) {
+                text = "Tomar manjulikar moton chul gulo";
+            }
+            else if (rand >= 0.18 && rand < 0.2) {
+                text = "Youre so so cute and adorable and lovable always even without trying";
+            }
+            else if (rand >= 0.2 && rand < 0.22) {
+                text = "Tumi onek caring and thoughtful";
+            }
+            else if (rand >= 0.22 && rand < 0.24) {
+                text = "You dont judge me and all the weird things i say";
+            }
+            else if (rand >= 0.24 && rand < 0.26) {
+                text = "Youre honest and youre great at comforting people";
+            }
+            else if (rand >= 0.26 && rand < 0.28) {
+                text = "I love ur gol gol gaal. wanna pinch them every time I see you";
+            }
+            else if (rand >= 0.28 && rand < 0.30) {
+                text = "Youre very weird and ektu crazy but I like it :3";
+            }
+            else if (rand >= 0.30 && rand < 0.32) {
+                text = "Tumi onek intelligent and academically hardworking";
+            }
+            else if (rand >= 0.32 && rand < 0.34) {
+                text = "You have really good music taste and we like the same type of songs";
+            }
+            else if (rand >= 0.34 && rand < 0.36) {
+                text = "You hype me and always believe in me";
+            }
+            else if (rand >= 0.36 && rand < 0.38) {
+                text = "You tell me the craziest tea :3";
+            }
+            else if (rand >= 0.38 && rand < 0.40) {
+                text = "I dont actually like u i like the reels u send me nigga :3";
+            }
+            else if (rand >= 0.40 && rand < 0.42) {
+                text = "Tomar saathe kotha bole amar mood instantly bhalo hoye jaye";
+            }
+            else if (rand >= 0.42 && rand < 0.44) {
+                text = "I like how we judge and make fun of others but never each other :3";
+            }
+            else if (rand >= 0.44 && rand < 0.46) {
+                text = "I love the random pics and vids u send me";
+            }
+            else if (rand >= 0.46 && rand < 0.48) {
+                text = "Youre cute when you blush or pretend to be annoyed";
+            }
+            else if (rand >= 0.48 && rand < 0.50) {
+                text = "I love hearing you yap about random stuff or your day";
+            }
+            else if (rand >= 0.50 && rand < 0.52) {
+                text = "Khat and yellow flowers remind me of you now 😔";
+            }
+            else if (rand >= 0.52 && rand < 0.54) {
+                text = "I am an atheist but tere liye mai mandir jaun 😔";
+            }
+            else if (rand >= 0.54 && rand < 0.56) {
+                text = "I love your texting style and that you say fren and now I say fren instead of friend too";
+            }
+            else if (rand >= 0.56 && rand < 0.58) {
+                text = "I like that you trusted me enough to tell me things that mattered to you";
+            }
+            else if (rand >= 0.58 && rand < 0.60) {
+                text = "I like how similar we are and think and laugh at the same things";
+            }
+            else if (rand >= 0.60 && rand < 0.62) {
+                text = "You care and think a lot for the people you love and youre really loyal";
+            }
+            else if (rand >= 0.62 && rand < 0.64) {
+                text = "Youre perfect wifey material 😔";
+            }
+            else if (rand >= 0.64 && rand < 0.66) {
+                text = "YOU LIKE CHINGRI AND ILISH MACH JUST LIKE I DO";
+            }
+            else if (rand >= 0.66 && rand < 0.68) {
+                text = "I like when you make me blush or smile 😔";
+            }
+            else if (rand >= 0.68 && rand < 0.70) {
+                text = "Youll be a great doctor and someday I will get ekdom free er chikitsa because you love me :3";
+            }
+            else if (rand >= 0.70 && rand < 0.72) {
+                text = "I like that you pick up my drunk calls and let me talk nonsense 😔";
+            }
+            else if (rand >= 0.72 && rand < 0.74) {
+                text = "Your wins and happiness makes me happy too and vice versa";
+            }
+            else if (rand >= 0.74 && rand < 0.76) {
+                text = "You look very huggable and kissable 😔";
+            }
+            else if (rand >= 0.76 && rand < 0.78) {
+                text = "I like your goj daant and how you eat like a capybara :3";
+            }
+            else if (rand >= 0.78 && rand < 0.80) {
+                text = "You make good morning and good night feel warmer than they should 😔";
+            }
+            else if (rand >= 0.80 && rand < 0.82) {
+                text = "ykw I actually dont like that you call my hawsi cat bhotka EVEN THO HE HAS A NAME(dhola) :(";
+            }
+            else if (rand >= 0.82 && rand < 0.84) {
+                text = "I love receiving your eid and random outing pics";
+            }
+            else if (rand >= 0.84 && rand < 0.86) {
+                text = "You make me ovulate when you wear a saree with a choti si bindi 😔";
+            }
+            else if (rand >= 0.86 && rand < 0.88) {
+                text = "Youre smart and Im a bhondu so we complement each other :3";
+            }
+            else if (rand >= 0.88 && rand < 0.90) {
+                text = "I really like your name and saying it for some reason 😔";
+            }
+            else if (rand >= 0.90 && rand < 0.92) {
+                text = "I like it when u bully me or annoy me 😔";
+            }
+            else if (rand >= 0.92 && rand < 0.94) {
+                text = "Everytime i take a pic of my cats I wanna show them to you because you love my cats";
+            }
+            else if (rand >= 0.94 && rand < 0.96) {
+                text = "I like that you call me tumi and not tui 😔";
+            }
+            else if (rand >= 0.96 && rand < 0.98) {
+                text = "I like your big shiny glittery dih";
+            }
+            else if (rand >= 0.98 && rand <= 1) {
+                text = "You accidentally became one of my favourite people(fuck you) 😔";
+            }
+            const box = document.getElementById("box");
+
+            if (typingInterval) clearInterval(typingInterval);
+
+            box.textContent = "";
+            let i = 0;
+
+            typingInterval = setInterval(() => {
+                if (i < text.length) {
+                    box.textContent += text[i];
+                    i++;
+                } else {
+                    clearInterval(typingInterval);
+                    typingInterval = null;
+                }
+            }, 35);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="things">Thing that I like about you :3</div>
+    <div class="container">
+        <div id="box" class="box">Press Another one pls 🙏🏻 </div>
+    </div>
+    <button class="randbtn" onclick="reasons()">Another one</button>
+    <button class="nxtbtn">Next</button>
+</body>
+
+</html>
