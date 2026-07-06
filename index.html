@@ -331,63 +331,7 @@
             transition: background-color 10ms;
         }
     </style>
-</head>
-
-<body>
-    <div class="whole">
-        <img class="cat3" src="transimg/cat_transparent_5.png">
-        <div class="box">
-            <p class="text">Ajker date ta ki jeno 🤔</p>
-            <div id="popupOverlay" class="overlay">
-                <div class="popup-box">
-                    <p>Dont lie to me.</p>
-                    <img class="cat2" src="transimg/cat_transparent_2.png">
-                    <button class="clsbtn" onclick="closePopup()">Close</button>
-                </div>
-            </div>
-            <img class="cat6"
-                src="transimg/Screenshot_2026-06-21-12-39-32-93_1c337646f29875672b5a61192b9010f9-removebg-preview.png">
-            <div id="nextOverlay" class="overlay2">
-                <div class="next-box">
-                    <p>OMG it's your birthday :3</p>
-                    <img class="cat5" src="transimg/image_656388e7-removebg-preview.png">
-                    <button class="nxtbtn">Next</button>
-                </div>
-            </div>
-            <img class="cat4" src="transimg/cat_transparent_4.png">
-            <div class="inputSpace">
-                <div class="digit" id="one">_</div>
-                <div class="digit" id="two">_</div>
-                <div class="slash">/</div>
-                <div class="digit" id="three">_</div>
-                <div class="digit" id="four">_</div>
-            </div>
-            <img class="cat1" src="transimg/cat_transparent_1.png">
-            <div class="keypad">
-                <div class="topbut">
-                    <button onclick="addnum('1')">1</button>
-                    <button onclick="addnum('2')">2</button>
-                    <button onclick="addnum('3')">3</button>
-                </div>
-                <div class="mid1but">
-                    <button onclick="addnum('4')">4</button>
-                    <button onclick="addnum('5')">5</button>
-                    <button onclick="addnum('6')">6</button>
-                </div>
-                <div class="mid2but">
-                    <button onclick="addnum('7')">7</button>
-                    <button onclick="addnum('8')">8</button>
-                    <button onclick="addnum('9')">9</button>
-                </div>
-                <div class="lastbut">
-                    <button onclick="resetnum()">C</button>
-                    <button onclick="addnum('0')">0</button>
-                    <button onclick="checkInput()">Enter</button>
-                </div>
-            </div>
-        </div>
-</body>
-<script>
+    <script>
     let currin = "";
     function addnum(num) {
         if (currin.length >= 4) return;
@@ -431,5 +375,61 @@
         }
     }
 </script>
+</head>
+
+<body>
+    <div class="whole">
+        <img class="cat3" src="transimg/cat_transparent_5.png">
+        <div class="box">
+            <p class="text">Ajker date ta ki jeno 🤔</p>
+            <div id="popupOverlay" class="overlay">
+                <div class="popup-box">
+                    <p>Dont lie to me.</p>
+                    <img class="cat2" src="transimg/cat_transparent_2.png">
+                    <button class="clsbtn" onclick="closePopup()">Close</button>
+                </div>
+            </div>
+            <img class="cat6"
+                src="transimg/Screenshot_2026-06-21-12-39-32-93_1c337646f29875672b5a61192b9010f9-removebg-preview.png">
+            <div id="nextOverlay" class="overlay2">
+                <div class="next-box">
+                    <p>OMG it's your birthday :3</p>
+                    <img class="cat5" src="transimg/image_656388e7-removebg-preview.png">
+                    <a href="https://oddb4lll.github.io/birthdaywebsite/page2.html"class="nxtbtn">Next</a>
+                </div>
+            </div>
+            <img class="cat4" src="transimg/cat_transparent_4.png">
+            <div class="inputSpace">
+                <div class="digit" id="one">_</div>
+                <div class="digit" id="two">_</div>
+                <div class="slash">/</div>
+                <div class="digit" id="three">_</div>
+                <div class="digit" id="four">_</div>
+            </div>
+            <img class="cat1" src="transimg/cat_transparent_1.png">
+            <div class="keypad">
+                <div class="topbut">
+                    <button onclick="addnum('1')">1</button>
+                    <button onclick="addnum('2')">2</button>
+                    <button onclick="addnum('3')">3</button>
+                </div>
+                <div class="mid1but">
+                    <button onclick="addnum('4')">4</button>
+                    <button onclick="addnum('5')">5</button>
+                    <button onclick="addnum('6')">6</button>
+                </div>
+                <div class="mid2but">
+                    <button onclick="addnum('7')">7</button>
+                    <button onclick="addnum('8')">8</button>
+                    <button onclick="addnum('9')">9</button>
+                </div>
+                <div class="lastbut">
+                    <button onclick="resetnum()">C</button>
+                    <button onclick="addnum('0')">0</button>
+                    <button onclick="checkInput()">Enter</button>
+                </div>
+            </div>
+        </div>
+</body>
 
 </html>
