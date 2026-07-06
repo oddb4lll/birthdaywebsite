@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Birthday cake</title>
+    <title>Love</title>
     <style>
         body {
             background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
@@ -224,6 +224,10 @@
             color: #72243E;
             font-size: 18px;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
         }
 
         .nxtbtn:active {
@@ -311,30 +315,7 @@
 
         }
     </style>
-</head>
-
-<body>
-
-    <div class="cake">
-        <p class="bdaytxt">HAPPY BIRTHDAYY RAYEEN!!!</p>
-        <div class="plate"></div>
-        <div class="layer layer-bottom"></div>
-        <div class="layer layer-middle"></div>
-        <div class="layer layer-top"></div>
-        <div class="icing"></div>
-        <div class="drip drip1"></div>
-        <div class="drip drip2"></div>
-        <div class="drip drip3"></div>
-        <div class="candle">
-            <div class="flame"></div>
-            <p class="oktxt">Ei nao cake. Bolbe na bday te cake khaowai ni :3</p>
-            <p class="monn">Monn bhore khao</p>
-            <button class="nxtbtn">Next</button>
-        </div>
-        <div id="balloons"></div>
-        <div id="confetti"></div>
-    </div>
-    <script>
+        <script>
         const balloonContainer = document.getElementById("balloons");
         const confettiContainer = document.getElementById("confetti");
 
@@ -389,6 +370,29 @@
 
         setInterval(createConfetti, 120);
     </script>
+</head>
+
+<body>
+
+    <div class="cake">
+        <p class="bdaytxt">HAPPY BIRTHDAYY RAYEEN!!!</p>
+        <div class="plate"></div>
+        <div class="layer layer-bottom"></div>
+        <div class="layer layer-middle"></div>
+        <div class="layer layer-top"></div>
+        <div class="icing"></div>
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+        <div class="candle">
+            <div class="flame"></div>
+            <p class="oktxt">Ei nao cake. Bolbe na bday te cake khaowai ni :3</p>
+            <p class="monn">Monn bhore khao</p>
+            <a href="https://oddb4lll.github.io/birthdaywebsite/page3.html" class="nxtbtn">Next</a>
+        </div>
+        <div id="balloons"></div>
+        <div id="confetti"></div>
+    </div>
 </body>
 
 </html>
