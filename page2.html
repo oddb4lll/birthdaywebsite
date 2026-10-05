@@ -7,11 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <title>Love</title>
     <style>
+        html, body { margin: 0; }
+body { min-height: 100dvh; overflow-x: hidden; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+}
         body {
-            background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -192,29 +199,18 @@
         }
 
         .oktxt {
-            position: relative;
-            top: 250px;
-            left: -150px;
             text-align: center;
             font-size: 15px;
-            white-space: nowrap;
             font-family: 'Libre Baskerville', serif;
         }
 
         .monn {
             font-family: 'Libre Baskerville', serif;
-            position: relative;
-            top: 250px;
-            left: -50px;
             text-align: center;
             font-size: 15px;
-            white-space: nowrap;
         }
 
         .nxtbtn {
-            position: relative;
-            top: 250px;
-            left: -50px;
             background-color: #F8B4C4;
             border: 2px solid #FFF8E7;
             height: 60px;
@@ -316,6 +312,7 @@
         }
     </style>
         <script>
+        document.addEventListener("DOMContentLoaded", () => {
         const balloonContainer = document.getElementById("balloons");
         const confettiContainer = document.getElementById("confetti");
 
@@ -369,6 +366,7 @@
         }
 
         setInterval(createConfetti, 120);
+    });
     </script>
 </head>
 
@@ -385,11 +383,13 @@
         <div class="drip drip2"></div>
         <div class="drip drip3"></div>
         <div class="candle">
-            <div class="flame"></div>
-            <p class="oktxt">Ei nao cake. Bolbe na bday te cake khaowai ni :3</p>
-            <p class="monn">Monn bhore khao</p>
-            <a href="https://oddb4lll.github.io/birthdaywebsite/page3.html" class="nxtbtn">Next</a>
-        </div>
+    <div class="flame"></div>
+</div>
+<div class="after">
+    <p class="oktxt">Ei nao cake. Bolbe na bday te cake khaowai ni :3</p>
+    <p class="monn">Monn bhore khao</p>
+    <a href="https://oddb4lll.github.io/birthdaywebsite/page3.html" class="nxtbtn">Next</a>
+</div>
         <div id="balloons"></div>
         <div id="confetti"></div>
     </div>
