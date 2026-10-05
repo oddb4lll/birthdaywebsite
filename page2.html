@@ -9,18 +9,21 @@
         rel="stylesheet">
     <title>Love</title>
     <style>
-        html, body { margin: 0; }
-body { min-height: 100dvh; overflow-x: hidden; }
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+html, body { margin: 0; }
+
+body {
+    min-height: 100dvh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
 }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+}
 
         .cake {
             position: absolute;
@@ -186,47 +189,40 @@ body::before {
             }
         }
 
-        .bdaytxt {
-            animation: pop .8s ease-out;
+        ..bdaytxt {
+    animation: pop .8s ease-out;
+    text-shadow: 0 0 15px rgba(255, 255, 255, .6);
+    position: absolute;
+    top: -150px;
+    left: 50%;
+    width: 92vw;
+    margin: 0 0 0 -46vw;
+    text-align: center;
+    font-size: clamp(28px, 9vw, 44px);
+}
 
-            text-shadow:
-                0 0 15px rgba(255, 255, 255, .6);
-            position: absolute;
-            top: -150%;
-            left: -5%;
-            text-align: center;
-            font-size: 50px;
-        }
+        .after {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(340px, 92vw);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
 
-        .oktxt {
-            text-align: center;
-            font-size: 15px;
-            font-family: 'Libre Baskerville', serif;
-        }
+.oktxt,
+.monn {
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Libre Baskerville', serif;
+}
 
-        .monn {
-            font-family: 'Libre Baskerville', serif;
-            text-align: center;
-            font-size: 15px;
-        }
-
-        .nxtbtn {
-            background-color: #F8B4C4;
-            border: 2px solid #FFF8E7;
-            height: 60px;
-            width: 120px;
-            border-radius: 40px;
-            transition: background-color 10ms;
-            color: #72243E;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .nxtbtn:active {
+.nxtbtn {
             background-color: #E89AAF;
             transition: background-color 10ms;
         }
