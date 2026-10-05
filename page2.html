@@ -189,7 +189,7 @@ body::before {
             }
         }
 
-        ..bdaytxt {
+      .bdaytxt {
     animation: pop .8s ease-out;
     text-shadow: 0 0 15px rgba(255, 255, 255, .6);
     position: absolute;
@@ -201,7 +201,7 @@ body::before {
     font-size: clamp(28px, 9vw, 44px);
 }
 
-        .after {
+.after {
     position: absolute;
     top: 240px;
     left: 50%;
@@ -214,6 +214,7 @@ body::before {
     gap: 12px;
     text-align: center;
 }
+ .balloon, .confetti { pointer-events: none; }
 
 .oktxt,
 .monn {
@@ -223,9 +224,25 @@ body::before {
 }
 
 .nxtbtn {
-            background-color: #E89AAF;
-            transition: background-color 10ms;
-        }
+    background-color: #F8B4C4;
+    border: 2px solid #FFF8E7;
+    height: 60px;
+    width: 120px;
+    border-radius: 40px;
+    transition: background-color 10ms;
+    color: #72243E;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nxtbtn:active {
+    background-color: #E89AAF;
+    transition: background-color 10ms;
+}
 
         .balloon {
             position: fixed;
