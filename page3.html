@@ -9,24 +9,16 @@
         rel="stylesheet">
     <title>You</title>
     <style>
-        body {
-            height: 170vh;
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-            background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
-        }
+        html, body { margin: 0; }
+body { min-height: 100dvh; overflow-x: hidden; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #FFF8E7 0%, #FFD6E0 100%);
+}
 
-        .container {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 50px;
-        }
 
         .flower {
             position: absolute;
@@ -127,15 +119,6 @@
             z-index: 2;
         }
 
-        .card {
-            top: 225px;
-            height: 250px;
-            width: 200px;
-            position: relative;
-            transition: transform 1500ms;
-            transform-style: preserve-3d;
-            flex-shrink: 0;
-        }
 
         .front,
         .back {
@@ -153,6 +136,7 @@
 
         .back {
             padding: 20px;
+            box-sizing: border-box;
             transform: rotateY(180deg);
             border-radius: 2rem;
             box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
@@ -171,24 +155,45 @@
         .back3 {
             background: linear-gradient(160deg, #FFFBF7 0%, #FCEAEF 100%);
         }
-
-        .nxtbtn {
-            position: relative;
-            top: 240px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            background-color: #F8B4C4;
-            border: 2px solid #FFF8E7;
-            height: 200px;
-            width: 120px;
-            border-radius: 40px;
-            transition: background-color 10ms;
-            color: #72243E;
-            font-size: 18px;
-            font-weight: bold;
-        }
+        body {
+  box-sizing: border-box;
+  min-height: 100dvh;
+  padding: 24px 16px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.card {
+  position: relative;
+  width: min(260px, 80vw);
+  height: 320px;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
+}
+.nxtbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: #F8B4C4;
+  border: 2px solid #FFF8E7;
+  height: 60px;
+  width: 120px;
+  border-radius: 40px;
+  color: #72243E;
+  font-size: 18px;
+  font-weight: bold;
+}
 
         .nxtbtn:active {
             background-color: #E89AAF;
